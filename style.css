@@ -1,0 +1,1057 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgb(255, 255, 255);
+    height: 60px;
+    margin: 20px;
+    border-radius: 26px;
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.navbar:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: #005BB5;
+    font-size: 28px;
+    transition: 0.3s color;
+}
+
+.login-button {
+    background-color: #005BB5;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #003F8A;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.2rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #005BB5;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #0071E3;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #0071E3;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+    left: 0;
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #005BB5;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-link:hover:before,
+    .nav-link.active::before {
+        transform: scaleX(1);
+        /* Scale to full width on hover */
+        visibility: visible;
+        /* Ensure it is visible when hovering */
+    }
+}
+
+/* Hero Section Styles */
+.hero-section {
+    background: url(img/slider-2.jpg) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    position: relative;
+    /* Required for the pseudo-element */
+}
+
+.hero-section::before {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Increased opacity for a darker dimming effect */
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.hero-section .container {
+    height: 100vh;
+    /* Full viewport height */
+    z-index: 1;
+    position: relative;
+    display: flex;
+    /* Enable flexbox */
+    flex-direction: column;
+    /* Stack items vertically */
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+    text-align: center;
+    /* Center align text */
+}
+
+.hero-section h1 {
+    font-size: 1.2em;
+    /* Title font size */
+    font-weight: bold;
+    /* Bold title */
+    transition: transform 0.3s, color 0.3s;
+    /* Adding transition for scale and color */
+    margin: 0;
+    /* Remove default margin */
+}
+
+.hero-section h1:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the title */
+    color: #005BB5;
+    /* Change color on hover */
+}
+
+/* New animated separator */
+.separator {
+    width: 60px;
+    /* Separator line width */
+    height: 3px;
+    /* Separator line height */
+    background-color: #0071E3;
+    /* Line color */
+    margin: 20px 0;
+    /* Margin to space it from title and paragraph */
+    transition: width 0.3s ease;
+    /* Smooth transition for width */
+}
+
+.separator:hover {
+    width: 100%;
+    /* Expand line width on hover */
+}
+
+/* Paragraph Styles */
+.hero-section p {
+    font-size: 0.5em;
+    /* Paragraph font size */
+    text-align: center;
+    /* Center align paragraph */
+    margin: 0;
+    /* Remove default margin */
+}
+
+/* Off-Canvas Menu Styles */
+.offcanvas {
+    background-color: #fff;
+    /* Keep the original background color */
+    /* Add any specific styles you need for the off-canvas here */
+}
+
+/* About Us Section Start */
+
+.about-us {
+    text-align: center;
+    background-color: rgba(247, 247, 247, 0.861);
+    padding: 60px 20px;
+}
+
+.about-us h2,
+.about-us h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-us p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+
+.separator {
+    height: 2px;
+    width: 60px;
+    background-color: #007BFF;
+    margin: 30px auto;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    max-width: 200px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.team-member img {
+    border-radius: 50%;
+    /* Makes the image circular */
+    width: 150px;
+    /* Adjust the width for the desired size */
+    height: 150px;
+    /* Ensure height matches width for a perfect circle */
+    object-fit: cover;
+    /* Ensures the image scales correctly within the circle */
+    transition: transform 0.3s ease;
+    /* Adds a smooth hover effect */
+    border: 3px solid #007BFF;
+    /* Adds a border around the image */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Adds a subtle shadow for depth */
+}
+
+.team-member h4 {
+    margin-top: 15px;
+    /* Adds space between image and name */
+    font-size: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.team-member p {
+    font-size: 1em;
+    color: #666;
+    margin-top: 5px;
+    /* Adds space between job title and bio */
+}
+
+.team-member:hover img {
+    transform: scale(1.05);
+    /* Slightly increases the size on hover */
+}
+
+.team-bio {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* About Us Section End */
+
+/* TECHNOLOGIES SECTION START */
+/* Technologies Section Start */
+
+.technologies {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.technologies h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.technologies p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.separator {
+    height: 2px;
+    width: 60px;
+    background-color: #007BFF;
+    margin: 30px auto;
+}
+
+.tech-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Spacing between technology items */
+    flex-wrap: wrap;
+    /* Allows items to wrap on smaller screens */
+}
+
+.tech-item {
+    max-width: 150px;
+    /* Set max width for responsiveness */
+    text-align: center;
+    padding: 20px;
+    /* Add padding for spacing */
+}
+
+.tech-item img {
+    width: 80px;
+    /* Smaller image size */
+    height: 80px;
+    /* Ensure height matches width for consistency */
+    object-fit: cover;
+    /* Ensures the image scales correctly */
+    margin-bottom: 10px;
+    /* Space between image and tech name */
+}
+
+.tech-item h4 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 10px 0 5px 0;
+    /* Add margin for spacing */
+}
+
+.tech-item p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    /* Slightly smaller font size */
+    color: #666;
+}
+
+/* Technologies Section End */
+/* Technologies Section Start */
+
+.technologies {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    /* Light background color */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.technologies h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.technologies p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.separator {
+    height: 2px;
+    width: 60px;
+    background-color: #007BFF;
+    margin: 30px auto;
+}
+
+.tech-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Spacing between technology items */
+    flex-wrap: wrap;
+    /* Allows items to wrap on smaller screens */
+}
+
+.tech-item {
+    max-width: 150px;
+    /* Set max width for responsiveness */
+    text-align: center;
+    padding: 20px;
+    /* Add padding for spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth hover transition */
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+    /* Slight lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Deeper shadow on hover */
+}
+
+.tech-item img {
+    width: 80px;
+    /* Smaller image size */
+    height: 80px;
+    /* Ensure height matches width for consistency */
+    object-fit: cover;
+    /* Ensures the image scales correctly */
+    margin-bottom: 10px;
+    /* Space between image and tech name */
+}
+
+.tech-item h4 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 10px 0 5px 0;
+    /* Add margin for spacing */
+}
+
+.tech-item p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.9em;
+    /* Slightly smaller font size */
+    color: #666;
+}
+
+/* Technologies Section End */
+
+
+/* TECHNOLOGIES SECTION END */
+
+/* FOOTER SECTION START */
+/* FOOTER SECTION START */
+
+.cta-section {
+    padding: 15px 20px;
+    /* Adjusted padding for a tighter fit */
+    margin: 0 auto 20px auto;
+    /* Reduced margin to minimize space */
+    width: fit-content;
+    /* Adjust the width to match content size */
+    border-radius: 30px;
+    /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for better depth */
+}
+
+.cta-section .btn {
+    border: 2px solid #cbcbcb;
+    /* Lighter border for the button */
+    color: #ffffff;
+    /* White text color */
+    background: transparent;
+    padding: 10px 25px;
+    /* Adjusted padding for a more balanced button size */
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    /* Smooth transition */
+}
+
+.cta-section .btn:hover {
+    background-color: #a5a930;
+    /* Gold background on hover */
+    color: #0a4275;
+    /* Dark blue text on hover */
+    transform: translateY(-3px);
+    /* Subtle upward movement on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Added shadow for depth */
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    /* Smooth transition for link color */
+}
+
+.footer-section a:hover {
+    color: #ffd700;
+    /* Gold color on hover for links */
+    text-shadow: 0 2px 5px rgba(255, 215, 0, 0.5);
+    /* Subtle glow effect */
+}
+
+.footer-section .p-3 {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Slightly dark background for contrast */
+    padding: 15px;
+    border-top: 1px solid #ffd700;
+    /* Gold border on top */
+}
+
+.footer-section .container p {
+    font-size: 16px;
+    margin: 0;
+}
+
+
+/* FOOTER SECTION END */
+
+/* FOOTER SECTION END */
+
+/* Portfolio start */
+/* Portfolio Section Styles */
+.portfolio {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    /* Light background for better contrast */
+}
+
+.portfolio h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+.portfolio p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #666;
+}
+
+.portfolio .separator {
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    /* Accent color */
+    margin: 20px auto;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+    /* Center align the content */
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.portfolio-item h4 {
+    font-size: 22px;
+    /* Increased font size */
+    margin: 15px;
+    color: #007bff;
+    /* Accent color */
+    text-align: center;
+    /* Center align the title */
+}
+
+.portfolio-item p {
+    font-size: 15px;
+    /* Slightly larger font size for description */
+    margin: 0 15px 15px;
+    color: #555;
+    text-align: center;
+    /* Center align the description */
+}
+
+
+/* Portfolio End */
+
+/* Price Section Start */
+/* Pricing Section Styles */
+.pricing {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+    /* Light background */
+}
+
+.pricing h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+
+.pricing p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #666;
+}
+
+.pricing .separator {
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    /* Accent color */
+    margin: 20px auto;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.pricing-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.pricing-card.popular {
+    border: 2px solid #007bff;
+    /* Highlight popular plan */
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+}
+
+.pricing-card h4 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #007bff;
+    /* Accent color */
+}
+
+.pricing-card .price {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.pricing-card .price span {
+    font-size: 16px;
+    color: #777;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.pricing-card ul li {
+    font-size: 14px;
+    color: #555;
+    margin: 8px 0;
+}
+
+.pricing-card button {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pricing-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Price Section Start */
+
+/* Contact Us start */
+/* Contact Us Section Styles */
+.contact-us {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.contact-us h2 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.contact-us p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    color: #666;
+}
+
+.contact-us .separator {
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 20px auto;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 15px;
+    /* Increased border radius for smoother look */
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Added animation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    /* Highlight border on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    /* Subtle glow effect */
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    /* Added button hover animation */
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+/* contact us end */
+
+/* login page start */
+/* Login Page Styles */
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    background: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.login-title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 5px;
+    color: #333;
+    animation: slideDown 1s ease-in-out;
+}
+
+.login-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 16px;
+}
+
+.separator {
+    width: 50px;
+    height: 4px;
+    background-color: #007bff;
+    margin: 10px auto 20px auto;
+    animation: growWidth 1s ease-in-out;
+}
+
+.login-form .form-group {
+    margin-bottom: 20px;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 30px;
+    /* Rounded corners for input fields */
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Added animation */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 16px;
+}
+
+.login-form input:focus {
+    border-color: #007bff;
+    /* Highlight border on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    /* Subtle glow effect */
+    outline: none;
+}
+
+.login-form button {
+    width: 100%;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Added button hover animation */
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.register-text {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes growWidth {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 50px;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* login page end */
+
+/* Signup Start */
+/* Common Styles for Signup and Login */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.signup-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+.signup-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #007bff;
+    /* Accent color */
+}
+
+.signup-form .form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.signup-form .form-control {
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 2px solid #ddd;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.signup-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.signup-form .btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.signup-form .btn:hover {
+    background-color: #0056b3;
+}
+
+.signup-form .switch-link {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-form .switch-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-form .switch-link a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Signup End */
